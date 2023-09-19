@@ -15,8 +15,17 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
+    
+    String myUsername = "pc12346";
+    String myPassword = "fpoly";
+        
     public Login() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        
+        
+        txtUsername.setText(myUsername);
+        txtPassword.setText(myPassword);
     }
 
     /**
@@ -113,10 +122,23 @@ public class Login extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
         
-        if(txtUsername.getText().isEmpty()){
+        String username = txtUsername.getText();
+        String password = txtPassword.getText();
+        
+        if(username.isEmpty()){
             JOptionPane.showMessageDialog(this, "Vui lòng nhập username", 
                     "Thông Báo", JOptionPane.WARNING_MESSAGE);
         }
+        else{
+            if(username.equals(myUsername) && password.equals(myPassword)){
+                JOptionPane.showMessageDialog(this, "Đăng nhập thành công remember " + (chkRemember.isSelected()?"check":"uncheck"), 
+                    "Thông Báo", JOptionPane.INFORMATION_MESSAGE);
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Sai username hoặc password", 
+                    "Thông Báo", JOptionPane.ERROR_MESSAGE);
+            }
+        } 
     }//GEN-LAST:event_btnLoginActionPerformed
 
     /**

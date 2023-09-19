@@ -4,6 +4,8 @@
  */
 package com.fpoly.Bai2;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author nghiaquach
@@ -13,8 +15,24 @@ public class UserManagement extends javax.swing.JFrame {
     /**
      * Creates new form UserManagement
      */
+    
+    Object[] columns={
+        "Fullname","Gender","Province"
+    };
+    
+    Object[][] rows = {
+        {"Nguyen Van A","Nam","Can Tho"},
+        {"Nguyen Thi B","Nu","Vinh Long"}
+    };
+    
     public UserManagement() {
         initComponents();
+        //set selected item to Hau Giang
+        cboProvince.setSelectedIndex(1);
+        String selectedProvince = (String)cboProvince.getSelectedItem();
+        System.out.println("Tinh Thanh: " + selectedProvince);
+        //init table data
+        tblUser.setModel(new DefaultTableModel(rows,columns));
     }
 
     /**
