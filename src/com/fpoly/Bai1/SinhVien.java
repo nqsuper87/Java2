@@ -11,6 +11,12 @@ package com.fpoly.Bai1;
 public class SinhVien {
     private String hoTen;
     private double diem;
+
+    public SinhVien(String hoTen, double diem) {
+        this.hoTen = hoTen;
+        this.diem = diem;
+    }
+    
     
     public void setHoTen(String hoTen){
         this.hoTen = hoTen;
