@@ -6,6 +6,7 @@ package com.fpoly.Bai3;
 
 import com.fpoly.Bai1.SinhVien;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -21,6 +22,35 @@ public class TableDemo extends javax.swing.JFrame {
      */
     public TableDemo() {
         initComponents();
+        initTableData();
+    }
+    
+    private void initTableData(){
+         // TODO add your handling code here:
+        SinhVien sv0 = new SinhVien("Nguyen Van A", 10);
+        SinhVien sv1 = new SinhVien("Nguyen Van A", 5);
+        SinhVien sv2 = new SinhVien("Nguyen Thi B", 9);
+        SinhVien sv3 = new SinhVien("Nguyen Van C", 8);
+        //tao list va them sinh vien vao list
+        List<SinhVien> students = new ArrayList<SinhVien>();
+         students.add(sv0);
+        students.add(sv1);
+        students.add(sv2);
+        students.add(sv3);
+        
+        Collections.sort(students);
+        
+        //Lấy table model từ bảng tblStudents
+        DefaultTableModel tableModel = (DefaultTableModel) tblStudents.getModel();
+        //reset về giá trị 0
+        tableModel.setRowCount(0);
+        
+        tableModel.addColumn("Name");
+        tableModel.addColumn("Marks");
+        
+        for (SinhVien student : students) {
+            tableModel.addRow(new Object[]{student.getHoTen(),student.getDiem()});
+        }
     }
 
     /**
@@ -35,7 +65,7 @@ public class TableDemo extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblStudents = new javax.swing.JTable();
         btnFill = new javax.swing.JButton();
-        btnOK = new javax.swing.JButton();
+        btnOk = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,10 +89,10 @@ public class TableDemo extends javax.swing.JFrame {
             }
         });
 
-        btnOK.setText("OK");
-        btnOK.addActionListener(new java.awt.event.ActionListener() {
+        btnOk.setText("OK");
+        btnOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOKActionPerformed(evt);
+                btnOkActionPerformed(evt);
             }
         });
 
@@ -76,7 +106,7 @@ public class TableDemo extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnFill)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnOK))
+                        .addComponent(btnOk))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 17, Short.MAX_VALUE))
         );
@@ -88,7 +118,7 @@ public class TableDemo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnFill)
-                    .addComponent(btnOK))
+                    .addComponent(btnOk))
                 .addGap(0, 33, Short.MAX_VALUE))
         );
 
@@ -96,27 +126,10 @@ public class TableDemo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnFillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFillActionPerformed
-        // TODO add your handling code here:
-        SinhVien sv1 = new SinhVien("Nguyen Van A", 7);
-        SinhVien sv2 = new SinhVien("Nguyen Thi B", 8);
-        SinhVien sv3 = new SinhVien("Nguyen Van C", 9);
-
-        List<SinhVien> students = new ArrayList<SinhVien>();
-        students.add(sv1);
-        students.add(sv2);
-        students.add(sv3);
-        
-        DefaultTableModel tableModel = (DefaultTableModel) tblStudents.getModel();
-        tableModel.setRowCount(0);
-        tableModel.addColumn("Name");
-        tableModel.addColumn("Marks");
-        
-        for (SinhVien student : students) {
-            tableModel.addRow(new Object[]{student.getHoTen(),student.getDiem()});
-        }
+        initTableData();
     }//GEN-LAST:event_btnFillActionPerformed
 
-    private void btnOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOKActionPerformed
+    private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
         // TODO add your handling code here:
         if(tblStudents.getRowCount()>0){
             int index = tblStudents.getSelectedRow();
@@ -128,7 +141,7 @@ public class TableDemo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Vui lòng fill data",
                 "Thông Báo", JOptionPane.INFORMATION_MESSAGE);
         }
-    }//GEN-LAST:event_btnOKActionPerformed
+    }//GEN-LAST:event_btnOkActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,7 +180,7 @@ public class TableDemo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFill;
-    private javax.swing.JButton btnOK;
+    private javax.swing.JButton btnOk;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblStudents;
     // End of variables declaration//GEN-END:variables

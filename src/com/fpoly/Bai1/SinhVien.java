@@ -8,9 +8,9 @@ package com.fpoly.Bai1;
  *
  * @author nghiaquach
  */
-public class SinhVien {
+public class SinhVien implements Comparable<SinhVien> {
     private String hoTen;
-    private double diem;
+    private Double diem;
 
     public SinhVien(String hoTen, double diem) {
         this.hoTen = hoTen;
@@ -26,7 +26,7 @@ public class SinhVien {
         return this.hoTen;
     }
     
-    public void setDiem(double diem){
+    public void setDiem(Double diem){
         if(diem<0|| diem>10){
             System.out.println("Điểm không hợp lệ");
         }
@@ -35,7 +35,12 @@ public class SinhVien {
         }
     }
     
-    public double getDiem(){ 
+    public Double getDiem(){ 
         return this.diem;
     }    
+
+    @Override
+    public int compareTo(SinhVien o) {
+        return diem.compareTo(o.diem);
+    }
 }
