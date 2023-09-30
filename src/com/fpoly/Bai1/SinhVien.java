@@ -4,11 +4,13 @@
  */
 package com.fpoly.Bai1;
 
+import java.io.Serializable;
+
 /**
  *
  * @author nghiaquach
  */
-public class SinhVien implements Comparable<SinhVien> {
+public class SinhVien implements Comparable<SinhVien>, Serializable {
     private String hoTen;
     private Double diem;
 
