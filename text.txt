@@ -1,0 +1,1 @@
+Ghi nội dung văn bản vào file text sử dụng Buffered Writer 
