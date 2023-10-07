@@ -11,5 +11,10 @@
             <file>file:/Users/nghiaquach/NetBeansProjects/Java2Bai1/src/com/fpoly/Bai1/SinhVien.java</file>
             <file>file:/Users/nghiaquach/NetBeansProjects/Java2Bai1/SinhVien.dat</file>
         </group>
+        <group name="ASM1">
+            <file>file:/Users/nghiaquach/NetBeansProjects/Java2Bai1/src/com/fpoly/Bai5/FileWriterDemo.java</file>
+            <file>file:/Users/nghiaquach/NetBeansProjects/Java2Bai1/src/com/fpoly/Bai6/MultiThreadExample.java</file>
+            <file>file:/Users/nghiaquach/NetBeansProjects/Java2Bai1/src/com/fpoly/Bai6/MyRunnable.java</file>
+        </group>
     </open-files>
 </project-private>
