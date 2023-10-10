@@ -24,9 +24,6 @@ public class MultiThreadExample {
         thread1.start();
         thread2.start();
         
-        
-        
-        
         System.out.println("Thong tin Thread 1");
         System.out.println("Id: " + thread1.getId());
         System.out.println("Name: " + thread1.getName() + "");
@@ -34,11 +31,10 @@ public class MultiThreadExample {
         System.out.println("Dead: " +thread1.isAlive());
         
         System.out.println("Thong tin Thread 2");
-         System.out.println("Id: " + thread2.getId());
+        System.out.println("Id: " + thread2.getId());
         System.out.println("Name: " + thread2.getName() + "");
         System.out.println("Priority: " +thread2.getPriority());
-        System.out.println("Is Alive: " +thread2.isAlive());
-        
+        System.out.println("Is Alive: " +thread2.isAlive()); 
     }
 }
 
