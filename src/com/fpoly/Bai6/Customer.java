@@ -31,7 +31,7 @@ public class Customer {
         System.out.println("Ban da rut tien thanh cong, balance con lai: " + balance);
     }
     
-    public synchronized void deposit(int amount){
+    public synchronized void deposit(int amount){  
         System.out.println("Ban dang nap tien .. ");
         balance += amount;
         System.out.println("Ban da nap so tien: " + amount);
